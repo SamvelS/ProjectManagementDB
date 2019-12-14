@@ -17,8 +17,8 @@ CREATE TABLE account_status(
 
 CREATE TABLE account(
 	id serial PRIMARY KEY,
-	email VARCHAR (355) UNIQUE NOT NULL,
-	password VARCHAR (50) NOT NULL,
+	email VARCHAR (255) UNIQUE NOT NULL,
+	password VARCHAR (255) NOT NULL,
 	first_name VARCHAR (50) NOT NULL,
 	last_name VARCHAR (100) NOT NULL,	
 	created_on TIMESTAMP NOT NULL,
@@ -156,7 +156,7 @@ INSERT INTO public.account_status(
 
 INSERT INTO public.account(
 	email, password, first_name, last_name, created_on, status_id)
-	VALUES ('mail@email.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Name', 'Surname', NOW(), 1);
+	VALUES ('mail@email.com', '$2a$11$UowIDAIXFIr8DT.umO/8W.RyIr.SA.pcPJZs/uSdi8y.5BZlsK78.', 'Name', 'Surname', NOW(), 1);
 
 
 
