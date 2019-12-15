@@ -158,5 +158,8 @@ INSERT INTO public.account(
 	email, password, first_name, last_name, created_on, status_id)
 	VALUES ('mail@email.com', '$2a$11$UowIDAIXFIr8DT.umO/8W.RyIr.SA.pcPJZs/uSdi8y.5BZlsK78.', 'Name', 'Surname', NOW(), 1);
 
+INSERT INTO public.account_role(
+	account_id, role_id)
+	VALUES (1, 1);
 
 
