@@ -154,9 +154,9 @@ INSERT INTO public.account_status(
 	name, description)
 	VALUES ('change password', 'force user to change password after login');
 
-	INSERT INTO public.account_status(
-		name, description)
-		VALUES ('active user', 'user changed password after first login and is active');
+INSERT INTO public.account_status(
+	name, description)
+	VALUES ('active user', 'user changed password after first login and is active');
 
 INSERT INTO public.account(
 	email, password, first_name, last_name, created_on, status_id)
@@ -181,3 +181,15 @@ INSERT INTO public.role_permission(
 INSERT INTO public.role_permission(
 	role_id, permission_id)
 	VALUES (1, 2);
+
+INSERT INTO public.action_status(
+	name)
+	VALUES ('not started');
+
+INSERT INTO public.action_status(
+	name)
+	VALUES ('in progress');
+
+INSERT INTO public.action_status(
+	name)
+	VALUES ('completed');
