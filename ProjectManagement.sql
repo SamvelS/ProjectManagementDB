@@ -176,4 +176,8 @@ INSERT INTO public.permission(
 
 INSERT INTO public.role_permission(
 	role_id, permission_id)
+	VALUES (1, 1);
+
+INSERT INTO public.role_permission(
+	role_id, permission_id)
 	VALUES (1, 2);
