@@ -170,6 +170,10 @@ INSERT INTO public.permission(
 	name, description)
 	VALUES ('manage_users', 'can manage users');
 
+INSERT INTO public.permission(
+	name, description)
+	VALUES ('manage_projects', 'can manage projects');
+
 INSERT INTO public.role_permission(
 	role_id, permission_id)
-	VALUES (1, 1);
+	VALUES (1, 2);
