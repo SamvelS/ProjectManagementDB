@@ -174,6 +174,10 @@ INSERT INTO public.permission(
 	name, description)
 	VALUES ('manage_projects', 'can manage projects');
 
+INSERT INTO public.permission(
+	name, description)
+	VALUES ('manage_tasks', 'can manage tasks');
+
 INSERT INTO public.role_permission(
 	role_id, permission_id)
 	VALUES (1, 1);
@@ -181,6 +185,14 @@ INSERT INTO public.role_permission(
 INSERT INTO public.role_permission(
 	role_id, permission_id)
 	VALUES (1, 2);
+
+INSERT INTO public.role_permission(
+	role_id, permission_id)
+	VALUES (1, 3);
+
+INSERT INTO public.role_permission(
+	role_id, permission_id)
+	VALUES (2, 3);
 
 INSERT INTO public.action_status(
 	name)
