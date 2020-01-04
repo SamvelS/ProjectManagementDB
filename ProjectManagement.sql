@@ -100,14 +100,10 @@ CREATE TABLE task
 	planned_end_date TIMESTAMP,
 	actual_start_date TIMESTAMP,
 	actual_end_date TIMESTAMP,
-	status_id integer NOT NULL,
 	project_id integer NOT NULL,
 	parent_task_id integer,
 	CONSTRAINT task_account_created_by_fkey FOREIGN KEY (created_by)
 		REFERENCES account (id) MATCH SIMPLE,
-	CONSTRAINT task_action_status_status_id_fkey FOREIGN KEY (status_id)
-		REFERENCES action_status (id) MATCH SIMPLE
-		ON UPDATE NO ACTION ON DELETE NO ACTION,
 	CONSTRAINT task_project_project_id_key FOREIGN KEY (project_id)
 		REFERENCES project (id) MATCH SIMPLE
 		ON UPDATE NO ACTION ON DELETE NO ACTION,
