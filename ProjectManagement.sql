@@ -129,19 +129,6 @@ CREATE TABLE task_assignment
 		ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE task_predecessor
-(
-	task_id integer NOT NULL,
-	predecessor_id integer NOT NULL,
-	PRIMARY KEY (task_id, predecessor_id),
-	CONSTRAINT task_predecessor_task_task_id_fkey FOREIGN KEY (task_id)
-		REFERENCES task (id) MATCH SIMPLE
-		ON UPDATE NO ACTION ON DELETE NO ACTION,
-	CONSTRAINT task_predecessor_task_predecessor_id_key FOREIGN KEY (predecessor_id)
-		REFERENCES task (id) MATCH SIMPLE
-		ON UPDATE NO ACTION ON DELETE NO ACTION
-);
-
 INSERT INTO public.role(
 	name, is_admin, description)
 	VALUES ('admin', true, 'admin role');
