@@ -31,7 +31,6 @@ CREATE TABLE account(
 CREATE TABLE role(
 	id serial PRIMARY KEY,
 	name VARCHAR (25) UNIQUE NOT NULL,
-	is_admin boolean NOT NULL,
 	description VARCHAR (255)
 );
 
