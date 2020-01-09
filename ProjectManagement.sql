@@ -111,22 +111,22 @@ CREATE TABLE task
 		ON UPDATE NO ACTION ON DELETE NO ACTION
 );
 
-CREATE TABLE task_assignment
-(
-	task_id integer NOT NULL,
-	account_id integer NOT NULL,
-	status_id integer NOT NULL,
-	PRIMARY KEY (task_id, account_id),
-	CONSTRAINT task_assignment_task_task_id_fkey FOREIGN KEY (task_id)
-		REFERENCES task (id) MATCH SIMPLE
-		ON UPDATE NO ACTION ON DELETE NO ACTION,
-	CONSTRAINT task_assignment_account_account_id_key FOREIGN KEY (account_id)
-		REFERENCES account (id) MATCH SIMPLE
-		ON UPDATE NO ACTION ON DELETE NO ACTION,
-	CONSTRAINT task_assignment_action_status_status_id_fkey FOREIGN KEY (status_id)
-		REFERENCES action_status (id) MATCH SIMPLE
-		ON UPDATE NO ACTION ON DELETE NO ACTION
-);
+	CREATE TABLE task_assignment
+	(
+		task_id integer NOT NULL,
+		account_id integer NOT NULL,
+		status_id integer NOT NULL DEFAULT 1,
+		PRIMARY KEY (task_id, account_id),
+		CONSTRAINT task_assignment_task_task_id_fkey FOREIGN KEY (task_id)
+			REFERENCES task (id) MATCH SIMPLE
+			ON UPDATE NO ACTION ON DELETE NO ACTION,
+		CONSTRAINT task_assignment_account_account_id_key FOREIGN KEY (account_id)
+			REFERENCES account (id) MATCH SIMPLE
+			ON UPDATE NO ACTION ON DELETE NO ACTION,
+		CONSTRAINT task_assignment_action_status_status_id_fkey FOREIGN KEY (status_id)
+			REFERENCES action_status (id) MATCH SIMPLE
+			ON UPDATE NO ACTION ON DELETE NO ACTION
+	);
 
 INSERT INTO public.role(
 	name, is_admin, description)
